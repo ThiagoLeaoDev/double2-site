@@ -1,0 +1,25 @@
+{
+  "Product":[
+    {     
+      "image": "",
+      "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "value": 60,
+      "offer": 10,
+      "new_flag": true
+    },
+    {     
+      "image": "",
+      "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "value": 59.99,
+      "offer": 40,
+      "new_flag": true
+    },
+    {     
+      "image": "",
+      "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "value": 59.99,
+      "offer": 40,
+      "new_flag": true
+    }
+  ]
+}
