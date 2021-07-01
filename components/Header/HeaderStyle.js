@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Image from 'next/image'
 
 export const Tabbar = styled.header`
   position: fixed;
@@ -16,8 +17,7 @@ export const ContainerLogo = styled.div`
   margin-left: 40px;
 `;
 
-export const IconDouble = styled.img`
-  width: 100px;
+export const IconDouble = styled(Image)`
 `;
 
 export const ContainerOptions = styled.div`

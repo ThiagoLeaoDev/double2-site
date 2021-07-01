@@ -8,31 +8,33 @@ import Data from "../components/Data.json"
 
 export default function Home() {
   return(
-    <div id="app">
+    <SC.Main>
       <Header/>
-      <Slide/>
+      <SC.ContentHome>
+        <Slide/>
       {/* <SC.Linha src={Banner}/> */}
-      <SC.ContainerLine>
-        <SC.ContainerLineLink>
-          <SC.TextLineLink>Visualizar Linha Completa</SC.TextLineLink>
-        </SC.ContainerLineLink>
-        {
-          Data.Product.map((products, index) =>
+        <SC.ContainerLine>
+          <SC.ContainerLineLink>
+            <SC.TextLineLink>Visualizar Linha Completa</SC.TextLineLink>
+          </SC.ContainerLineLink>
           {
-            return(
-            <CardProduct
-              image={products.image}
-              name={products.name}
-              value={products.value.toFixed(2)}
-              discount={(products.value-(products.value*(products.offer/100))).toFixed(2)}
-              offer={products.offer}
-              flag={products.new_flag}
-              key={index}
-            />
-            )
-          })
-        }
-      </SC.ContainerLine>
-    </div>
+            Data.Product.map((products, index) =>
+            {
+              return(
+              <CardProduct
+                image={products.image}
+                name={products.name}
+                value={products.value.toFixed(2)}
+                discount={(products.value-(products.value*(products.offer/100))).toFixed(2)}
+                offer={products.offer}
+                flag={products.new_flag}
+                key={index}
+              />
+              )
+            })
+          }
+        </SC.ContainerLine>
+      </SC.ContentHome>
+    </SC.Main>
   )
 }

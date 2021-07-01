@@ -1,9 +1,9 @@
+
 import { IconContext } from "react-icons";
 import { BiShoppingBag, BiHeart, BiUser, BiSearch} from "react-icons/bi";
 
 import * as SC from "./HeaderStyle";
 
-import Logo from "../../public/logo.svg"
 
 // import { Container } from './styles';
 
@@ -11,12 +11,12 @@ function Header() {
   return(
     <SC.Tabbar>
       <SC.ContainerLogo>
-        <SC.IconDouble src={Logo}/>
+          <SC.IconDouble src="/logo.svg" width={100} height={100}/>
       </SC.ContainerLogo>
 
       <SC.ContainerOptions>
         <SC.TabOption href="#">
-          <SC.TextOption>ÍNICIO</SC.TextOption>
+          <SC.TextOption>INÍCIO</SC.TextOption>
         </SC.TabOption>
         <SC.TabOption href="#">
           <SC.TextOption>LANÇAMENTOS</SC.TextOption>
@@ -31,24 +31,16 @@ function Header() {
 
       <SC.ContainerIcons>
         <SC.HoverIcon href="#">
-          <IconContext.Provider value={{ color: "white", size: "1.5em"}}>
-            <BiSearch/>
-          </IconContext.Provider>
+          <BiSearch color="white" size="1.5em"/>
         </SC.HoverIcon>
         <SC.HoverIcon href="#">
-          <IconContext.Provider value={{ color: "white", size: "1.5em"}}>
-            <BiUser/>
-          </IconContext.Provider>
+          <BiUser color="white" size="1.5em"/>
         </SC.HoverIcon>
         <SC.HoverIcon href="#">
-          <IconContext.Provider value={{ color: "white", size: "1.5em"}}>
-            <BiHeart/>
-          </IconContext.Provider>
+          <BiHeart color="white" size="1.5em"/>
         </SC.HoverIcon>
         <SC.HoverIcon href="#">
-          <IconContext.Provider value={{ color: "white", size: "1.5em"}}>
-            <BiShoppingBag/>
-          </IconContext.Provider>
+          <BiShoppingBag color="white" size="1.5em"/>
         </SC.HoverIcon>
       </SC.ContainerIcons>
     </SC.Tabbar>

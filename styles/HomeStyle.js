@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ContentHome = styled.div`
+  width: 100vw;
+  max-width: 1500px;
+  align-self: center;
+`;
+
 export const ContainerLine = styled.div`
   display: flex;
   flex-wrap: wrap;

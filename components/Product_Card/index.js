@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; 
 
 import { IconContext } from "react-icons";
-import {  BiHeart } from "react-icons/bi";
+import { BiHeart } from "react-icons/bi";
 import { AnimatePresence } from "framer-motion"
 
 
@@ -16,14 +16,12 @@ export default function Index(props) {
     onMouseLeave={() => setHover(false)}>
 
       <SC.NewFlag>
-        <SC.ImageFlag/>
+        <SC.ImageFlag src="/new_flag.svg" width={30} height={68}/>
         <SC.TextFlag>new</SC.TextFlag>
       </SC.NewFlag>
 
       <SC.ContainerHeart href="#">
-        <IconContext.Provider value={{ color: "var(--grey)", size: "2.5em"}}>
-          <BiHeart/>
-        </IconContext.Provider>
+          <BiHeart size="2.5em" color="var(--grey)"/>
       </SC.ContainerHeart>
 
       <SC.SaleFlag>
@@ -50,7 +48,7 @@ export default function Index(props) {
         }
       </AnimatePresence>
 
-      <SC.ImageProduct src={props.image}/>
+      <SC.ImageProduct src={props.image} width={300} height={460}/>
 
       <SC.ContainerText>
         <SC.ProductTitle>{props.name}</SC.ProductTitle>

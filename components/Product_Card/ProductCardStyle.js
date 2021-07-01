@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import {motion} from "framer-motion"
+import Image from 'next/image'
 
 
 export const CardProduct = styled.div`
@@ -21,7 +22,7 @@ export const NewFlag = styled.div`
   margin-left: 15px;
 `;
 
-export const ImageFlag = styled.img`
+export const ImageFlag = styled(Image)`
 `;
 
 export const TextFlag = styled.p`
@@ -38,12 +39,6 @@ export const TextFlag = styled.p`
 export const ContainerHeart = styled.a`
   position: absolute;
   margin-left: 260px;
-`;
-
-export const Heart = styled.img`
-  height: 40px;
-  width: 40px;
-  fill: white;
 `;
 
 export const SaleFlag = styled.div`
@@ -101,9 +96,8 @@ export const ButtonBuy = styled(ButtonView)`
   background-color: var(--pastel-yellow);
 `;
 
-export const ImageProduct = styled.img`
-  width: 300px;
-  height: 460px;
+export const ImageProduct = styled(Image)`
+  z-index: -1;
 `;
 
 export const ContainerText = styled.div`
