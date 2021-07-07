@@ -3,20 +3,31 @@
     {     
       "image": "/blusa_preta.png",
       "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "description": "Clássica e atemporal.<br>Teste",
       "value": 60,
       "offer": 10,
       "new_flag": true
     },
     {     
-      "image": "/blusa_preta.png",
+      "image": "/blusa_branca_mulher.png",
       "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "description": "Clássica e atemporal.<br>Teste",
       "value": 59.99,
       "offer": 40,
       "new_flag": true
     },
     {     
-      "image": "/blusa_preta.png",
+      "image": ["/IMG_0006.jpg", "/IMG_0001.jpg", "/IMG_0002.jpg", "/IMG_0003.jpg", "/IMG_0004.jpg", "/IMG_0005.jpg"],
       "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "description": "Clássica e atemporal.<br>Teste",
+      "value": 59.99,
+      "offer": 40,
+      "new_flag": true
+    },
+    {     
+      "image": "/blusa_branca.png",
+      "name": "CAMISETA REGULAR DOUBLE² BASIC PRETA",
+      "description": "Clássica e atemporal.<br>Teste",
       "value": 59.99,
       "offer": 40,
       "new_flag": true

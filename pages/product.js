@@ -1,41 +1,42 @@
-import  {React, useState}from 'react'
+import  {useState, useEffect}from 'react'
+
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 import * as SC from "../styles/ProductStyle"
-import GlobalStyles from "../styles/Global"
 
-import Header from '../../components/Header'
-
-import Image1 from '../../assets/IMG_0001.jpg';
-import Image2 from '../../assets/IMG_0002.jpg';
-import Image3 from '../../assets/IMG_0003.jpg';
-import Image4 from '../../assets/IMG_0004.jpg';
-import Image5 from '../../assets/IMG_0005.jpg';
-import Image6 from '../../assets/IMG_0006.jpg';
-
+import Header from '../components/Header'
 
 function App() {
   const [Zoom, setZoom] = useState(false);
+
+  const router = useRouter();
+  const {query : { image, name, value, discount, code, description },} = router
+
+
   let teste = [0, 1, 2, 3, 4];
   return (
     <div id="app">
-      <GlobalStyles/>
+      <Head>
+        <title>{name}</title>
+      </Head>
       <Header/>
-
       <SC.ContainerContent>
         <SC.ContainerImages>
           <SC.ContainerLeftImages>
-            <SC.MiniImage src={Image1}/>
+            {/*
             <SC.MiniImage src={Image2}/>
             <SC.MiniImage src={Image3}/>
             <SC.MiniImage src={Image4}/>
-            <SC.MiniImage src={Image5}/>
+            <SC.MiniImage src={Image5}/> */}
           </SC.ContainerLeftImages>
-          <SC.SelectedImage src={Image6} />
+          {/* <SC.SelectedImage src={image[0]} layout='fill'/> */}
         </SC.ContainerImages>
         <SC.ContainerProdInfos>
-          <SC.TitleProduct>CAMISETA REGULAR DOUBLE² ALTERNATIVE AMARELA</SC.TitleProduct>
-          <SC.TextCod>Cód. Ref. C 8843</SC.TextCod>
+          <SC.TitleProduct>{name}</SC.TitleProduct>
+          <SC.TextCod>Cód. Ref. P {code}</SC.TextCod>
           <SC.ContainerStars>
             {
               teste.map((elemento, index) => {
@@ -51,8 +52,8 @@ function App() {
             <SC.TextAvaliacoes>(13 Avaliações)</SC.TextAvaliacoes>
           </SC.ContainerStars>
           <SC.ContainerPrice>
-            <SC.TextDiscount>R$ 59,99</SC.TextDiscount>
-            <SC.TextPrice>R$ 49,99</SC.TextPrice>
+            <SC.TextDiscount>R$ {value}</SC.TextDiscount>
+            <SC.TextPrice>R$ {discount}</SC.TextPrice>
           </SC.ContainerPrice>
           <SC.Divisor/>
           <SC.TitleSize>Tamanho</SC.TitleSize>
@@ -110,7 +111,7 @@ function App() {
           <SC.TextOption>Avaliações</SC.TextOption>
         </SC.ContainerOptions>
         <SC.DivisorDesc/>
-        <SC.TextDesc>Clássica e atemporal.</SC.TextDesc>
+        <SC.TextDesc>{description}</SC.TextDesc>
         <br/>
         <SC.TextDesc>Modelo masculino: 1,81 cm e veste o tamanho M.</SC.TextDesc>
         <SC.TextDesc>Modelo feminino: 1,72 cm e veste o tamanho P.</SC.TextDesc>

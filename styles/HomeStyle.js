@@ -8,7 +8,7 @@ export const Main = styled.div`
 
 export const ContentHome = styled.div`
   width: 100vw;
-  max-width: 1500px;
+  max-width: 1450px;
   align-self: center;
 `;
 
@@ -23,7 +23,6 @@ export const ContainerLineLink = styled.a`
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 `;
 
 export const TextLineLink = styled.p`

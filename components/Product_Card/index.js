@@ -11,10 +11,9 @@ export default function Index(props) {
   const [Hover, setHover] = useState(false);
   
   return (
-    <SC.CardProduct href="#"
+    <SC.CardProduct
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}>
-
       <SC.NewFlag>
         <SC.ImageFlag src="/new_flag.svg" width={30} height={68}/>
         <SC.TextFlag>new</SC.TextFlag>

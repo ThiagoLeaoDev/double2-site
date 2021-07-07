@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from 'next/image'
 
 export const ContainerContent = styled.div`
   padding-top: 160px;
@@ -30,13 +31,13 @@ export const ContainerLeftImages = styled.div`
   }
 `;
 
-export const MiniImage = styled.img`
+export const MiniImage = styled(Image)`
   width: 100%;
   max-width: 140px;
   margin: 0px 20px 20px 0px;
 `;
 
-export const SelectedImage = styled.img`
+export const SelectedImage = styled(Image)`
   width: 70%;
   &:hover{
     cursor: zoom-in;
