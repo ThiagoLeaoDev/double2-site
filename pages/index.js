@@ -28,17 +28,12 @@ export default function Home() {
           {
             Data.Product.map((product, index) =>
             {
-              console.log(product.image)
               return(
                 <Link href={{
                   pathname: "/product",
                   query: {
-                    image: product.image,
+                    id: index,
                     name: product.name,
-                    value: product.value.toFixed(2),
-                    discount: (product.value-(product.value*(product.offer/100))).toFixed(2),
-                    code: index,
-                    description: product.description
                     },
                 }}>
                   <a>

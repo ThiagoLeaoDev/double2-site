@@ -8,102 +8,118 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import * as SC from "../styles/ProductStyle"
 
 import Header from '../components/Header'
+import Data from '../components/Data.json'
 
 function App() {
   const [Zoom, setZoom] = useState(false);
 
   const router = useRouter();
-  const {query : { image, name, value, discount, code, description },} = router
-
+  const { query : { id, name } } = router
 
   let teste = [0, 1, 2, 3, 4];
+
   return (
     <div id="app">
       <Head>
         <title>{name}</title>
       </Head>
       <Header/>
-      <SC.ContainerContent>
-        <SC.ContainerImages>
-          <SC.ContainerLeftImages>
-            {/*
-            <SC.MiniImage src={Image2}/>
-            <SC.MiniImage src={Image3}/>
-            <SC.MiniImage src={Image4}/>
-            <SC.MiniImage src={Image5}/> */}
-          </SC.ContainerLeftImages>
-          {/* <SC.SelectedImage src={image[0]} layout='fill'/> */}
-        </SC.ContainerImages>
-        <SC.ContainerProdInfos>
-          <SC.TitleProduct>{name}</SC.TitleProduct>
-          <SC.TextCod>Cód. Ref. P {code}</SC.TextCod>
-          <SC.ContainerStars>
-            {
-              teste.map((elemento, index) => {
-                return(
-                  <FaRegStar
-                  key={index}
-                  color={"var(--pastel-yellow)"}
-                  size="2rem"
-                  backgroundColor={"var(--pastel-yellow)"}/>
-                );
-              })
-            }
-            <SC.TextAvaliacoes>(13 Avaliações)</SC.TextAvaliacoes>
-          </SC.ContainerStars>
-          <SC.ContainerPrice>
-            <SC.TextDiscount>R$ {value}</SC.TextDiscount>
-            <SC.TextPrice>R$ {discount}</SC.TextPrice>
-          </SC.ContainerPrice>
-          <SC.Divisor/>
-          <SC.TitleSize>Tamanho</SC.TitleSize>
-          <SC.ContainerSizes>
-            <SC.CircleSize>
-              <SC.TextSize>PP</SC.TextSize>
-            </SC.CircleSize>
-            <SC.CircleSize>
-              <SC.TextSize>P</SC.TextSize>
-            </SC.CircleSize>
-            <SC.CircleSize>
-              <SC.TextSize>M</SC.TextSize>
-            </SC.CircleSize>
-            <SC.CircleSize>
-              <SC.TextSize>G</SC.TextSize>
-            </SC.CircleSize>
-            <SC.CircleSize>
-              <SC.TextSize>GG</SC.TextSize>
-            </SC.CircleSize>
-            <SC.CircleSize>
-              <SC.TextSize>XG</SC.TextSize>
-            </SC.CircleSize>
-          </SC.ContainerSizes>
-          <SC.ContainerQuantity>
-            <SC.TextQuantity>Quantidade</SC.TextQuantity>
-            <SC.SelectorQuantity>
-              <SC.SelectorOption>1</SC.SelectorOption>
-              <SC.SelectorOption>2</SC.SelectorOption>
-              <SC.SelectorOption>3</SC.SelectorOption>
-              <SC.SelectorOption>4</SC.SelectorOption>
-            </SC.SelectorQuantity>
-          </SC.ContainerQuantity>
-          <SC.ContainerButtons>
-            <SC.ButtonBuy>Comprar agora</SC.ButtonBuy>
-            <SC.ButtonAddWallet>Adicionar ao carrinho</SC.ButtonAddWallet>
-          </SC.ContainerButtons>
-          <SC.ContainerShipping>
-            <SC.TitleCalc>Calcule o frete</SC.TitleCalc>
-            <SC.InputCalc placeholder="CEP"></SC.InputCalc>
-            <SC.ButtonCalc>OK</SC.ButtonCalc>
-          </SC.ContainerShipping>
-          <SC.ContainerShippingInfos>
-            <SC.TextAddress>Rua Monte Plano, Vila Margarida - Sao Vicente, SP</SC.TextAddress>
-            <SC.ContainerShippingPrice>
-              <SC.TitleShipping>Jadlog - Normal - de 1 a 5 dias úteis</SC.TitleShipping>
-              <SC.TextShippingPrice>R$47,32</SC.TextShippingPrice>
-            </SC.ContainerShippingPrice>
-          </SC.ContainerShippingInfos>
-        </SC.ContainerProdInfos>
-      </SC.ContainerContent>
+      {
+        Data.Product.map((product, index) => {
+          if(id==index){
+            return(
+              <SC.ContainerContent>
+                <SC.ContainerImages>
+                  <SC.ContainerLeftImages>
+                    {
+                      product.image.map((img, index) => {
+                        console.log(img)
+                        return(
+                          <SC.ContainerMiniImage>
+                            <SC.MiniImage src={img} key={index} layout='fill' objectFit="cover" quality={15}/>
+                          </SC.ContainerMiniImage>
+                        );
+                      })
+                    }
+                  </SC.ContainerLeftImages>
+                  <SC.ContainerSelectedImage>
+                    <SC.SelectedImage src={"/IMG_0006.jpg"} layout='fill' objectFit="cover" quality={15}/>
+                  </SC.ContainerSelectedImage>
+                </SC.ContainerImages>
+                <SC.ContainerProdInfos>
+                  <SC.TitleProduct>{product.name}</SC.TitleProduct>
+                  <SC.TextCod>Cód. Ref. P {index}</SC.TextCod>
+                  <SC.ContainerStars>
+                    {
+                      teste.map((elemento, index) => {
+                        return(
+                          <FaRegStar
+                          key={index}
+                          color={"var(--pastel-yellow)"}
+                          size="2rem"
+                          backgroundColor={"var(--pastel-yellow)"}/>
+                        );
+                      })
+                    }
+                    <SC.TextAvaliacoes>(13 Avaliações)</SC.TextAvaliacoes>
+                  </SC.ContainerStars>
+                  <SC.ContainerPrice>
+                    <SC.TextDiscount>R$ {product.value.toFixed(2)}</SC.TextDiscount>
+                    <SC.TextPrice>R$ {(product.value-(product.value*(product.offer/100))).toFixed(2)}</SC.TextPrice>
+                  </SC.ContainerPrice>
+                  <SC.Divisor/>
+                  <SC.TitleSize>Tamanho</SC.TitleSize>
+                  <SC.ContainerSizes>
+                    <SC.CircleSize>
+                      <SC.TextSize>PP</SC.TextSize>
+                    </SC.CircleSize>
+                    <SC.CircleSize>
+                      <SC.TextSize>P</SC.TextSize>
+                    </SC.CircleSize>
+                    <SC.CircleSize>
+                      <SC.TextSize>M</SC.TextSize>
+                    </SC.CircleSize>
+                    <SC.CircleSize>
+                      <SC.TextSize>G</SC.TextSize>
+                    </SC.CircleSize>
+                    <SC.CircleSize>
+                      <SC.TextSize>GG</SC.TextSize>
+                    </SC.CircleSize>
+                    <SC.CircleSize>
+                      <SC.TextSize>XG</SC.TextSize>
+                    </SC.CircleSize>
+                  </SC.ContainerSizes>
+                  <SC.ContainerQuantity>
+                    <SC.TextQuantity>Quantidade</SC.TextQuantity>
+                    <SC.SelectorQuantity>
+                      <SC.SelectorOption>1</SC.SelectorOption>
+                      <SC.SelectorOption>2</SC.SelectorOption>
+                      <SC.SelectorOption>3</SC.SelectorOption>
+                      <SC.SelectorOption>4</SC.SelectorOption>
+                    </SC.SelectorQuantity>
+                  </SC.ContainerQuantity>
+                  <SC.ContainerButtons>
+                    <SC.ButtonBuy>Comprar agora</SC.ButtonBuy>
+                    <SC.ButtonAddWallet>Adicionar ao carrinho</SC.ButtonAddWallet>
+                  </SC.ContainerButtons>
+                  <SC.ContainerShipping>
+                    <SC.TitleCalc>Calcule o frete</SC.TitleCalc>
+                    <SC.InputCalc placeholder="CEP"></SC.InputCalc>
+                    <SC.ButtonCalc>OK</SC.ButtonCalc>
+                  </SC.ContainerShipping>
+                  <SC.ContainerShippingInfos>
+                    <SC.TextAddress>Rua Monte Plano, Vila Margarida - Sao Vicente, SP</SC.TextAddress>
+                    <SC.ContainerShippingPrice>
+                      <SC.TitleShipping>Jadlog - Normal - de 1 a 5 dias úteis</SC.TitleShipping>
+                      <SC.TextShippingPrice>R$47,32</SC.TextShippingPrice>
+                    </SC.ContainerShippingPrice>
+                  </SC.ContainerShippingInfos>
+                </SC.ContainerProdInfos>
+              </SC.ContainerContent>
+            )
+          }
+        })
+      }
 
       <SC.ContainerDescRating>
         <SC.ContainerOptions>
@@ -111,7 +127,7 @@ function App() {
           <SC.TextOption>Avaliações</SC.TextOption>
         </SC.ContainerOptions>
         <SC.DivisorDesc/>
-        <SC.TextDesc>{description}</SC.TextDesc>
+        <SC.TextDesc>DESCRICAO</SC.TextDesc>
         <br/>
         <SC.TextDesc>Modelo masculino: 1,81 cm e veste o tamanho M.</SC.TextDesc>
         <SC.TextDesc>Modelo feminino: 1,72 cm e veste o tamanho P.</SC.TextDesc>

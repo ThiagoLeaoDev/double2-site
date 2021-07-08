@@ -19,7 +19,6 @@ export const ContainerImages = styled.div`
 `;
 
 export const ContainerLeftImages = styled.div`
-  height: 100%;
   width: 25%;
   display: flex;
   flex-direction: column;
@@ -31,17 +30,28 @@ export const ContainerLeftImages = styled.div`
   }
 `;
 
-export const MiniImage = styled(Image)`
-  width: 100%;
-  max-width: 140px;
+
+
+export const ContainerMiniImage = styled.div`
+  width: 124px;
+  height: 300px;
   margin: 0px 20px 20px 0px;
 `;
 
-export const SelectedImage = styled(Image)`
-  width: 70%;
+export const MiniImage = styled(Image)`
+`;
+
+export const ContainerSelectedImage = styled.div`
+  position: relative;
+  width: 500px;
+  height: 100%;
+  background-color: red;
   &:hover{
     cursor: zoom-in;
   }
+`;
+
+export const SelectedImage = styled(Image)`
 `;
 
 export const ContainerProdInfos  = styled.div`
