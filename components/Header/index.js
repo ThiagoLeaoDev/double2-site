@@ -9,7 +9,7 @@ import * as SC from "./HeaderStyle";
 // import { Container } from './styles';
 
 function Header() {
-  const [Colapse, setColapse] = useState(false);
+  const [Colapse, setColapse] = useState(true);
 
   return(
     <SC.Tabbar>

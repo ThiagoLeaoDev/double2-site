@@ -1,3 +1,4 @@
+
 import styled from "styled-components"
 import Image from 'next/image'
 
@@ -18,7 +19,12 @@ export const ContainerLogo = styled.div`
 `;
 
 export const ContainerHamburger = styled.div`
+  display: none;
   margin-right: 40px;
+  cursor: pointer;
+  @media (max-width: 1007px) {
+    display: block;
+  }
 `;
 
 export const IconDouble = styled(Image)`
@@ -32,7 +38,6 @@ export const ContainerOptions = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
   @media (max-width: 1007px) {
     display: ${props => props.open ? "none" : "block"};
     position: absolute;
@@ -53,7 +58,6 @@ export const TabOption = styled.a`
   display: flex;
   align-items: center;
   cursor: pointer;
-
   @media (max-width: 1007px) {
     height: 60px;
     border-top: 2px solid #2f2f30;
@@ -64,7 +68,6 @@ export const TabOption = styled.a`
 export const TextOption = styled.p`
   color: var(--white);
   font-weight: bold;
-
   &:hover{
     color: var(--pastel-yellow);
   }
@@ -78,7 +81,6 @@ export const ContainerIcons = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-right: 40px;
-
   @media (max-width: 1007px) {
     display: none;
   }
@@ -92,4 +94,3 @@ export const HoverIcon = styled.a`
 export const Linha = styled.img`
   width: 100%;
 `;
-
