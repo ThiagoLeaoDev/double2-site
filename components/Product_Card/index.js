@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import { useState } from 'react'; 
 
 import { IconContext } from "react-icons";
 import { BiHeart } from "react-icons/bi";
