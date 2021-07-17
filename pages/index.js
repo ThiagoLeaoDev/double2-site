@@ -23,7 +23,7 @@ export default function Home() {
       {/* <SC.Linha src={Banner}/> */}
         <SC.ContainerLine>
           <SC.ContainerLineLink>
-            <SC.TextLineLink>POPULARES </SC.TextLineLink>
+            <SC.TextLineLink>POPULARES &gt;</SC.TextLineLink>
           </SC.ContainerLineLink>
           {
             Data.Product.map((product, index) =>

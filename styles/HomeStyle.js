@@ -8,7 +8,7 @@ export const Main = styled.div`
 
 export const ContentHome = styled.div`
   width: 100vw;
-  max-width: 1450px;
+  max-width: 1400px;
   align-self: center;
 `;
 
@@ -22,16 +22,14 @@ export const ContainerLineLink = styled.a`
   width: 100%;
   height: 100px;
   display: flex;
-  align-items: center;
-`;
-
-export const TextLineLink = styled.p`
-  font-size: 1.3rem;
-  font-weight: 500;
   opacity: 0.6;
-  cursor: pointer;
-
-  &:hover{
+  align-items: center;
+    &:hover{
     opacity: 1;
   }
+`;
+
+export const TextLineLink = styled.h6`
+  font-weight: bold;
+  cursor: pointer;
 `;

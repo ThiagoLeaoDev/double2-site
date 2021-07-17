@@ -10,7 +10,7 @@ import * as SC from "../styles/ProductStyle"
 import Header from '../components/Header'
 import Data from '../components/Data.json'
 
-function App() {
+export default function Product() {
   const [Zoom, setZoom] = useState(false);
 
   const router = useRouter();
@@ -148,5 +148,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -61,9 +61,8 @@ export const ContainerProdInfos  = styled.div`
   padding-right: 40px;
 `;
 
-export const TitleProduct  = styled.p`
+export const TitleProduct  = styled.h5`
   font-weight: bold;
-  font-size: 1.625rem;
   margin-bottom: 13px;
   width: 48%;
 `;

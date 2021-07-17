@@ -4,9 +4,8 @@ import Image from 'next/image'
 
 export const Tabbar = styled.header`
   position: fixed;
-  z-index: 10;
   background-color: var(--black);
-  width: 100%;
+  width: 100vw;
   height: 90px;
   display: flex;
   flex-direction: row;

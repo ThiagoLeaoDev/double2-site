@@ -1,0 +1,53 @@
+*{
+    font-family: 'Poppins', BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--white-normal);
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 72px;
+    line-height: 100%;
+}
+
+@media screen and (max-width: 960px){
+    h1{
+        font-size: 64px;
+    }
+
+    h2{
+        font-size: 48px;
+    }
+}
+
+h2{
+    font-size: 64px;
+    line-height: 110%;
+}
+
+h3{
+    font-size: 48px;
+    line-height: 110%;
+}
+
+h4{
+    font-size: 32px;
+    line-height: 120%;
+}
+
+h5{
+    font-size: 24px;
+    line-height: 140%;
+}
+
+h6{
+    font-size: 18px;
+    line-height: 150%;
+}
