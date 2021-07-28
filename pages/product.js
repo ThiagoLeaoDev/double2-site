@@ -63,6 +63,7 @@ export default function Product() {
                     }
                     <SC.TextAvaliacoes>(13 Avaliações)</SC.TextAvaliacoes>
                   </SC.ContainerStars>
+                  
                   <SC.ContainerPrice>
                     <SC.TextDiscount>R$ {product.value.toFixed(2)}</SC.TextDiscount>
                     <SC.TextPrice>R$ {(product.value-(product.value*(product.offer/100))).toFixed(2)}</SC.TextPrice>
