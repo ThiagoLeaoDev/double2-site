@@ -48,6 +48,12 @@ body::-webkit-scrollbar {
   width: 8px;             /* width of the entire scrollbar */
 }
 
+@media only screen and (max-width: 992px) {
+	body::-webkit-scrollbar{
+		display: none;
+	}
+}
+
 body::-webkit-scrollbar-track {
   background: #FFFFFF;        /* color of the tracking area */
 }

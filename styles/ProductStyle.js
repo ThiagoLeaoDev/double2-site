@@ -1,137 +1,143 @@
 import styled from "styled-components";
-import Image from 'next/image'
 
-export const ContainerContent = styled.div`
-  padding-top: 160px;
-  width: 100%;
-  height: 610px;
+export const Main = styled.div`
   display: flex;
-  flex-direction: row;
-  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Content = styled.div`
+  width: 100vw;
+  max-width: 1400px;
+  margin-top: 90px;
+  margin-bottom: 240px;
+  padding-top: 50px;
+
+  @media(max-width: 992px) {
+    padding-top: 0px
+  }
+`;
+
+export const ContainerImagesDesc = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const ContainerImages = styled.div`
-  width: 25vw;
-  height: 100%;
-  margin-left: 16%;
-  display: flex;
-  flex-direction: row;
-`;
-
-export const ContainerLeftImages = styled.div`
-  width: 25%;
+  width: 50%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  &::-webkit-scrollbar{
-    width: 8px;
+  background-color: blue;
+
+  @media(max-width: 992px) {
+    width: 100%;
   }
 `;
 
-
-
-export const ContainerMiniImage = styled.div`
-  width: 124px;
-  height: 300px;
-  margin: 0px 20px 20px 0px;
-`;
-
-export const MiniImage = styled(Image)`
-`;
-
-export const ContainerSelectedImage = styled.div`
-  position: relative;
-  width: 500px;
-  height: 100%;
-  background-color: red;
-  &:hover{
-    cursor: zoom-in;
+export const ContainerDesc = styled(ContainerImages)`
+  background-color: white;
+  height: auto;
+  
+  @media(max-width: 992px) {
+    margin-top: 30px;
   }
 `;
 
-export const SelectedImage = styled(Image)`
-`;
-
-export const ContainerProdInfos  = styled.div`
-  width: 50vw;
-  height: 100%;
-  padding-left: 40px;
-  padding-right: 40px;
-`;
-
-export const TitleProduct  = styled.h5`
+export const TitleProduct  = styled.h4`
   font-weight: bold;
-  margin-bottom: 13px;
-  width: 48%;
+  margin: 0 30px 4px 30px;
 `;
 
-export const TextCod  = styled.p`
-  font-size: 1.125rem;
+export const TextCod  = styled.h5`
   color: var(--text-grey);
-  margin-bottom: 15px;
+  margin: 0 30px 8px 30px;
 `;
 
 export const ContainerStars  = styled.div`
+  width: 320px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  max-width: 26%;
-  margin-left: -5px;
-  margin-bottom: 30px;
+  justify-content: space-between;
+  margin: 0 30px 20px 30px;
+
+  @media(max-width: 576px) {
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
-export const TextAvaliacoes  = styled.p`
+export const ContainerIcons  = styled.div`
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  @media(max-width: 576px) {
+    width: 100%;
+  }
+`;
+
+export const TextAvaliacoes  = styled.h6`
   margin-top: 3px;
   color: var(--text-grey);
 `;
 
 export const ContainerPrice  = styled.div`
+  width: 200px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 18.5%;
-  margin-bottom: 30px;
+  margin: 0 30px 24px 30px;
 `;
 
-export const TextDiscount  = styled.p`
-  font-size: 1.125rem;
+export const TextDiscount  = styled.h6`
   color: var(--text-grey);
   text-decoration: line-through;
 `;
 
-export const TextPrice  = styled.p`
-  font-size: 1.875rem;
+export const TextPrice  = styled.h3`
   font-weight: bold;
 `;
 
 export const Divisor  = styled.div`
-  width: 48%;
-  border-top: 1px solid #C4C4C4;
-`;
-
-export const TitleSize  = styled.p`
-  font-weight: bold;
-  font-size: 1.25rem;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  width: 90%;
+  border-top: 2px solid var(--text-light-grey);
+  opacity: 0.3;
+  margin: 0 30px 20px 30px;
+  align-self: center;
 `;
 
 export const ContainerSizes  = styled.div`
-  width: 25%;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  margin: 0 30px 28px 30px;
+`;
+
+export const TitleSize  = styled.h4`
+  font-weight: bold;
+  margin-bottom: 15px;
+`;
+
+export const ContainerCircles  = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
 `;
 
 export const CircleSize  = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -143,29 +149,30 @@ export const CircleSize  = styled.div`
     opacity: 0.8;
   }
 `;
-export const TextSize  = styled.p`
+
+export const TextSize  = styled.h6`
   font-weight: bold;
   color: var(--white);
 `;
 
 export const ContainerQuantity  = styled.div`
-  width: 25%;
+  width: 280px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin: 0 30px 24px 30px;
 `;
 
-export const TextQuantity  = styled.div`
-
+export const TextQuantity  = styled.h5`
+  font-weight: 500;
 `;
 
 export const SelectorQuantity  = styled.select`
-  width: 100px;
+  width: 50%;
   padding: 4px;
-  border-radius: 4px; 
-  border-color: var(--light-grey);
+  border-radius: 4px;
+  border: 2px solid var(--light-grey);
   font-family: 'Poppins', sans-serif;
 `;
 
@@ -174,18 +181,8 @@ export const SelectorOption  = styled.option`
   color: var(--black);
 `;
 
-
-export const ContainerButtons  = styled.div`
-  width: 40%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-`;
-
 export const ButtonBuy  = styled.button`
-  width: 220px;
+  width: 230px;
   border-radius: 10px;
   background-color: var(--pastel-yellow);
   border: none;
@@ -194,27 +191,52 @@ export const ButtonBuy  = styled.button`
   font-weight: bold;
   color: var(--white);
   font-family: 'Poppins', sans-serif;
+  margin: 0 30px 24px 30px;
+
   &:hover{
     cursor: pointer;
     opacity: 0.8;
   }
-`;
 
-export const ButtonAddWallet  = styled(ButtonBuy)`
-  font-weight: normal;
-  background-color: var(--black);
+  @media(max-width: 992px) {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    margin: 0;
+    position:fixed;
+    z-index:100;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 `;
 
 export const ContainerShipping  = styled.div`
-  width: 30%;
+  max-width: 400px;
+  width: 80%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin: 0 30px 24px 30px;
+
+  @media(max-width: 992px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
-export const TitleCalc  = styled.p`
+export const TitleCalc  = styled(TextQuantity)`
+  @media(max-width: 992px) {
+    margin-bottom: 8px;
+  }
+`;
+
+export const ContainerInputButton  = styled.div`
+  width: 240px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const InputCalc  = styled.input`
@@ -241,16 +263,17 @@ export const ButtonCalc  = styled.button`
 `;
 
 export const ContainerShippingInfos  = styled.div`
-  width: 37%;
+  width: 75%;
+  max-width: 630px;
   display: flex;
   flex-direction: column;
   background-color: #E5E5E5;
   padding: 10px 20px 30px 20px;
   border-radius: 10px;
+  margin: 0 30px 24px 30px;
 `;
 
-export const TextAddress  = styled.p`
-  font-size: 0.75rem;
+export const TextAddress  = styled.h5`
   color: var(--text-grey);
 `;
 
@@ -271,32 +294,48 @@ export const TextShippingPrice  = styled.p`
   color: var(--green);
 `;
 
+export const ContainerDescRate  = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const ContainerDescRating  = styled.div`
-  margin-bottom: 30px;
 `;
 
 export const ContainerOptions  = styled.div`
-  width: 190px;
-  margin-left: 10%;
+  width: 210px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin: 40px 30px 10px 20px;
+`;
+
+export const ContainerTextOption  = styled.div`
 `;
 
 export const TextOption  = styled.p`
   font-weight: 500;
   color: var(--text-grey);
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover{
+    color: var(--text-black);
+  }
 `;
 
 export const DivisorDesc  = styled(Divisor)`
+  max-width: 1400px;
   width: 100%;
-  margin-bottom: 25px;
+  margin: 0;
+  margin-bottom: 30px;
+`;
+
+export const ContainerTextDesc  = styled.div`
+  margin: 0 30px 24px 30px;
 `;
 
 export const TextDesc  = styled.p`
-  width: 40%;
-  margin-left: 10%;
   text-align: left;
   color: var(--text-grey);
   font-size: 1rem;
