@@ -15,7 +15,7 @@ export default function Home() {
   return(
     <SC.Main>
       <Head>
-        <title>Double2 | Home</title>
+        <title>Double2 | Início</title>
       </Head>
       <Header/>
       <SC.ContentHome>

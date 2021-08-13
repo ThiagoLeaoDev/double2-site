@@ -22,7 +22,6 @@ function Header() {
       </SC.ContainerLogo>
 
       <SC.ContainerHamburger>
-        <Link href={"/"}>
           <SC.HoverIcon onClick={() => setColapse(!Colapse)}>
             {
               Colapse?
@@ -31,7 +30,6 @@ function Header() {
                 <BiX color="white" size="2em"/>
             }
           </SC.HoverIcon>
-        </Link>
       </SC.ContainerHamburger>
 
       <SC.ContainerOptions open={Colapse}>

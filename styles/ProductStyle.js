@@ -21,25 +21,20 @@ export const Content = styled.div`
 export const ContainerImagesDesc = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
-`;
+  margin: 0 40px;
 
-export const ContainerImages = styled.div`
-  width: 50%;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  background-color: blue;
-
-  @media(max-width: 992px) {
-    width: 100%;
+    @media(max-width: 992px) {
+    margin: 0px
   }
 `;
 
-export const ContainerDesc = styled(ContainerImages)`
-  background-color: white;
+export const ContainerDesc = styled.div`
+  width: 50%;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
   
   @media(max-width: 992px) {
     margin-top: 30px;
@@ -207,6 +202,11 @@ export const ButtonBuy  = styled.button`
     z-index:100;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+
+    &:hover{
+      cursor: pointer;
+      opacity: 1;
+    }
   }
 `;
 

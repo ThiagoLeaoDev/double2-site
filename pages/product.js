@@ -1,19 +1,23 @@
+import Link from 'next/link'
+import Head from 'next/head'
 
 import * as SC from "../styles/ProductStyle";
 
 import Header from '../components/Header'
+import Gallery from '../components/Image_gallery'
 
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 export default function product() {
   return (
     <SC.Main>
+      <Head>
+        <title>Double2 | Produto</title>
+      </Head>
       <Header/>
       <SC.Content>
         <SC.ContainerImagesDesc>
-          <SC.ContainerImages>
-
-          </SC.ContainerImages>
+          <Gallery/>
           <SC.ContainerDesc>
             <SC.TitleProduct>CAMISETA REGULAR DOUBLE² ALTERNATIVE AMARELA</SC.TitleProduct>
             <SC.TextCod>Cód. Ref. C 8843</SC.TextCod>
