@@ -32,6 +32,10 @@ export const BoxMiniImage = styled.div`
   align-self: center;
   margin-bottom: 20px;
 
+  &:hover{
+    cursor: pointer;  
+  }
+
   &:last-child{
     margin-bottom: 0;
   }
@@ -44,9 +48,36 @@ export const MiniImage = styled(Image)`
 
 export const FullImage = styled.div`
   position: relative;
-  background-color: green;
   max-height: 100%;
   height: 60vw;
   min-height: 450px;
   width: 520px;
+
+  &:hover{
+    cursor: zoom-in;  
+  }
+`;
+
+//MODAL AREA
+
+export const ModalArea = styled.div`
+  position: absolute;
+  background-color: black;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+`;
+
+export const BoxModalImage = styled.div`
+  z-index: 1;
+  position: absolute;
+  width: 30%;
+  height: 85%;
+  left: 35%;
+  top: 100px;
+`;
+
+export const ModalImage = styled(Image)`
 `;

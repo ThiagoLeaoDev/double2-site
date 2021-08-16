@@ -84,7 +84,7 @@ export const TextAvaliacoes  = styled.h6`
 `;
 
 export const ContainerPrice  = styled.div`
-  width: 200px;
+  width: 220px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,6 +102,7 @@ export const TextPrice  = styled.h3`
 `;
 
 export const Divisor  = styled.div`
+  position: relative;
   width: 90%;
   border-top: 2px solid var(--text-light-grey);
   opacity: 0.3;
