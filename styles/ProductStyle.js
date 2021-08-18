@@ -37,7 +37,7 @@ export const ContainerDesc = styled.div`
   background-color: white;
   
   @media(max-width: 992px) {
-    margin-top: 30px;
+    width: 100%;
   }
 `;
 

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -6,11 +7,18 @@ import * as SC from "../styles/ProductStyle";
 
 import Header from '../components/Header'
 import Gallery from '../components/Image_gallery'
+import MobileGallery from '../components/Image_gallery_mobile'
 import Data from "../components/Data.json"
 
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 export default function product() {
+  const [width, setWidth] = React.useState(0);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  });
+
   const router = useRouter();
   const { query : { id, name } } = router
 
@@ -26,7 +34,12 @@ export default function product() {
             return(
               <SC.Content>
                 <SC.ContainerImagesDesc>
-                  <Gallery passImage={product.image}/>         
+                  {
+                    width > 992 ?
+                      <Gallery passImage={product.image}/>
+                    :
+                    <MobileGallery passImage={product.image}/>
+                  }
                   <SC.ContainerDesc>
                     <SC.TitleProduct>{product.name}</SC.TitleProduct>
                     <SC.TextCod>Cód. Ref. P {index}</SC.TextCod>
@@ -68,9 +81,6 @@ export default function product() {
                     <SC.ContainerSizes>
                       <SC.TitleSize>Tamanho</SC.TitleSize>
                       <SC.ContainerCircles>
-                        <SC.CircleSize>
-                          <SC.TextSize>PP</SC.TextSize>
-                        </SC.CircleSize>
                         <SC.CircleSize>
                           <SC.TextSize>P</SC.TextSize>
                         </SC.CircleSize>

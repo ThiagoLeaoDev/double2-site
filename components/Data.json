@@ -19,18 +19,20 @@
     {     
       "image": ["/IMG_0006.jpg", "/IMG_0001.jpg", "/IMG_0002.jpg", "/IMG_0003.jpg", "/IMG_0004.jpg", "/IMG_0005.jpg", "/IMG_0001.jpg", "/IMG_0001.jpg", "/IMG_0001.jpg", "/IMG_0001.jpg", "/IMG_0001.jpg"],
       "name": "CAMISETA REGULAR DOUBLE² BASIC AZUL",
-      "description": "Clássica e atemporal.<br>Teste",
+      "description": "Clássica e atemporal.",
       "value": 59.99,
       "offer": 40,
-      "new_flag": true
+      "new_flag": true,
+      "sizes": ["P", "M", "G", "GG"]
     },
     {     
       "image": ["/moletom_preto_1.jpg", "/moletom_preto_2.jpg", "/moletom_preto_3.jpg", "/moletom_preto_4.jpg", "/moletom_preto_5.jpg"],
       "name": "Moletom Preto | WNTR",
       "description": "Moletom de modelo Canguru com bolso e capuz. Logotipo bordado no peito e na parte traseira do punho.",
       "value": 129.99,
-      "offer": 0,
-      "new_flag": true
+      "offer": 10,
+      "new_flag": true,
+      "sizes": ["P", "M", "G", "GG"]
     },
     {     
       "image": "/blusa_branca.png",
