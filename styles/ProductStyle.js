@@ -146,6 +146,14 @@ export const CircleSize  = styled.div`
   }
 `;
 
+export const CircleSizeDisabled  = styled(CircleSize)`
+  background-color: var(--light-grey);
+    &:hover{
+    cursor: default;
+    opacity: 0.45;
+  }
+`;
+
 export const TextSize  = styled.h6`
   font-weight: bold;
   color: var(--white);
@@ -322,6 +330,14 @@ export const TextOption  = styled.p`
 
   &:hover{
     color: var(--text-black);
+  }
+`;
+
+export const TextOptiondisable  = styled(TextOption)`
+  color: var(--text-light-grey);
+
+  &:hover{
+    color: var(--text-light-grey);
   }
 `;
 

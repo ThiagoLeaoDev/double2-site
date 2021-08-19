@@ -14,13 +14,12 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 export default function product() {
   const [width, setWidth] = React.useState(0);
+  const router = useRouter();
+  const { query : { id, name } } = router
 
   useEffect(() => {
     setWidth(window.innerWidth);
   });
-
-  const router = useRouter();
-  const { query : { id, name } } = router
 
   return (
     <SC.Main>
@@ -81,21 +80,24 @@ export default function product() {
                     <SC.ContainerSizes>
                       <SC.TitleSize>Tamanho</SC.TitleSize>
                       <SC.ContainerCircles>
-                        <SC.CircleSize>
-                          <SC.TextSize>P</SC.TextSize>
-                        </SC.CircleSize>
-                        <SC.CircleSize>
-                          <SC.TextSize>M</SC.TextSize>
-                        </SC.CircleSize>
-                        <SC.CircleSize>
-                          <SC.TextSize>G</SC.TextSize>
-                        </SC.CircleSize>
-                        <SC.CircleSize>
-                          <SC.TextSize>GG</SC.TextSize>
-                        </SC.CircleSize>
-                        <SC.CircleSize>
-                          <SC.TextSize>XG</SC.TextSize>
-                        </SC.CircleSize>
+                        {
+                          product.sizes.map((sizes, index) => {
+                            if(sizes.available == true){
+                              return(
+                                <SC.CircleSize key={index}>
+                                  <SC.TextSize>{sizes.letter}</SC.TextSize>
+                                </SC.CircleSize>
+                              )
+                            }
+                            else{
+                              return(
+                                <SC.CircleSizeDisabled key={index}>
+                                  <SC.TextSize>{sizes.letter}</SC.TextSize>
+                                </SC.CircleSizeDisabled>
+                              )
+                            }
+                          })
+                        }
                       </SC.ContainerCircles>
                     </SC.ContainerSizes>
                     <SC.ContainerQuantity>
@@ -131,7 +133,7 @@ export default function product() {
                       <SC.TextOption>Descrição</SC.TextOption>
                     </SC.ContainerTextOption>
                     <SC.ContainerTextOption>
-                      <SC.TextOption>Avaliações</SC.TextOption>
+                      <SC.TextOptiondisable>Avaliações</SC.TextOptiondisable>
                     </SC.ContainerTextOption>
                   </SC.ContainerOptions>
                   <SC.DivisorDesc/>
