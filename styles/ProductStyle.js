@@ -172,19 +172,6 @@ export const TextQuantity  = styled.h5`
   font-weight: 500;
 `;
 
-export const SelectorQuantity  = styled.select`
-  width: 50%;
-  padding: 4px;
-  border-radius: 4px;
-  border: 2px solid var(--light-grey);
-  font-family: 'Poppins', sans-serif;
-`;
-
-export const SelectorOption  = styled.option`
-  font-family: 'Poppins', sans-serif;
-  color: var(--black);
-`;
-
 export const ButtonBuy  = styled.button`
   width: 230px;
   border-radius: 10px;

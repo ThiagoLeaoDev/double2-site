@@ -15,7 +15,7 @@ export default function Index(props) {
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}>
       <SC.NewFlag>
-        <SC.ImageFlag src="/new_flag.svg" width={30} height={68}/>
+        <SC.ImageFlag src="/new_flag.svg" width={30} height={68} />
         <SC.TextFlag>new</SC.TextFlag>
       </SC.NewFlag>
 

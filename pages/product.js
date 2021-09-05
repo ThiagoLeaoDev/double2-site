@@ -102,12 +102,6 @@ export default function product() {
                     </SC.ContainerSizes>
                     <SC.ContainerQuantity>
                       <SC.TextQuantity>Quantidade</SC.TextQuantity>
-                      <SC.SelectorQuantity>
-                        <SC.SelectorOption>1</SC.SelectorOption>
-                        <SC.SelectorOption>2</SC.SelectorOption>
-                        <SC.SelectorOption>3</SC.SelectorOption>
-                        <SC.SelectorOption>4</SC.SelectorOption>
-                      </SC.SelectorQuantity>
                     </SC.ContainerQuantity>
                     <SC.ButtonBuy>Comprar agora</SC.ButtonBuy>
                     {/* <SC.ContainerShipping>
